@@ -1,0 +1,44 @@
+    <div id="nav" class="pure-u">
+        <div class="nav-menu-button">
+            <a href="#" class="pure-menu-link font-small"><i class="fas fa-th fa-sm"></i>ブログ</a>
+            <a href="#" class="pure-menu-link font-small"><i class="fas fa-user fa-sm"></i>ログイン</a>
+                
+        </div>
+
+        <div class="nav-inner">
+            <button class="primary-button pure-button"><%= image_tag 'logo', :size => "80x80" %></button>
+
+            <div class="pure-menu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a 
+                        href="/" class="pure-menu-link"><i class="fas fa-th">
+                        </i>ブログ</a></li>
+                    
+                    <% if user_signed_in? %>
+                        <li class="pure-menu-item"><a 
+                            href="<%= edit_user_registration_path %>" class="pure-menu-link"><i class="fas fa-user-edit">
+                            </i>パスワード変更</a></li>
+                        <li class="pure-menu-item">
+                            <%= link_to content_tag(:i, 'ログアウト', class: 'fas fa-sign-out-alt'), destroy_user_session_path, method: :delete, class: "pure-menu-link" %>
+                            </li>
+                    <% else %>
+                        <li class="pure-menu-item"><a 
+                            href="<%= new_user_session_path %>" class="pure-menu-link"><i class="fas fa-user">
+                            </i>ログイン</a></li>
+                        <li class="pure-menu-item"><a 
+                            href="<%= new_user_registration_path %>" class="pure-menu-link"><i class="fas fa-user-plus">
+                            </i>ユーザ登録</a></li>
+                    <% end %>
+                    <li class="pure-menu-heading">ニュース</li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link font-small" target="_blank">日銀、長短金利操作の影響は限定－マネーと物価の分析必要</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link font-small" target="_blank">トランプ大統領、ＳＮＳの「偏向」に対処必要と主張        </a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link font-small" target="_blank">米国株が５カ月ぶり高値、注目材料控え</a></li>
+                </ul>
+            </div>
+            <div class="pure-u">
+                <% if !notice.nil? %>
+                <p class="pure-u-1-2 notice"><%= notice %></p>
+                <% end %>
+            </div>
+        </div>
+    </div>

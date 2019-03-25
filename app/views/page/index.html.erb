@@ -1,0 +1,132 @@
+<%= render :partial => "common/nav" %>
+
+    <div id="list" class="pure-u-1">
+        
+        <div class="page-item pure-g">
+            <div class="pure-u-3-4">
+                <h5 class="page-name">Tilo Mitra</h5>
+                <h4 class="page-subject">Hello from Toronto</h4>
+                <p class="page-desc">
+                    Hey, I just wanted to check in with you from Toronto. I got here earlier today.
+                </p>
+            </div>
+        </div>
+
+        
+
+        <div class="page-item pure-g">
+            <div class="pure-u-3-4">
+                <h5 class="page-name">YUI Library</h5>
+                <h4 class="page-subject">You have 5 bugs assigned to you</h4>
+                <p class="page-desc">
+                    Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla.
+                </p>
+            </div>
+        </div>
+
+        <div class="page-item pure-g">
+            <div class="pure-u-3-4">
+                <h5 class="page-name">Reid Burke</h5>
+                <h4 class="page-subject">Re: Design Language</h4>
+                <p class="page-desc">
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa.
+                </p>
+            </div>
+        </div>
+
+        <div class="page-item pure-g">
+            <div class="pure-u-3-4">
+                <h5 class="page-name">山田一郎</h5>
+                <h4 class="page-subject"><a href="#">2019年の仮想通貨</a></h4>
+                <p class="page-desc">
+                    We found 10 news articles that you may like.
+                </p>
+            </div>
+        </div>
+        
+        <div class="page-item pure-g">
+            <div class="pure-u-3-4">
+                <h5 class="page-name">山田一郎</h5>
+                <h4 class="page-subject">2019年の仮想通貨</h4>
+                <p class="page-desc">
+                    We found 10 news articles that you may like.
+                </p>
+            </div>
+        </div>
+
+        <div class="page-item pure-g">
+            <div class="pure-u-3-4">
+                <h5 class="page-name">山田一郎</h5>
+                <h4 class="page-subject">日銀、長短金利操作の影響は限定－マネーと物価の分析必要</h4>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="main" class="pure-u-1">
+        <div class="page-content">
+            <div class="page-content-header pure-g">
+                <div class="pure-u-1-2">
+                    <h1 class="page-content-title">このサイトについて</h1>
+                    <p class="page-content-subtitle">
+                        By <a href="#">太郎</a> at <span>2019/4/1</span>
+                    </p>
+                </div>
+
+                <div class="page-content-controls pure-u-1-2">
+                    <button class="secondary-button pure-button">前へ</button>
+                    <button class="secondary-button pure-button">次へ</button>
+                </div>
+            </div>
+
+            <div class="page-content-body">
+                <p>
+                    変数には大きく分けて、インスタンス変数（privateなメンバ変数＝プロパティ）、クラス変数（staticプロパティ）、ローカル変数、グローバル変数の４つがあります。
+各々は、下記のようなルールでその使い所や、スコープ（有効範囲）が決まります。
+
+1.インスタンス変数
+インスタンス変数はインスタンスごとに独立して値が保持される変数です。同じクラスの複数のインスタンス同士で異なる値になります。
+
+インスタンス変数の使い方として典型的なのは、コンストラクタ（__construct）で受けた引数を使ってインスタンス変数を初期代入し、その後、それぞれのインスタンスメソッドで参照・変更される使い方です。
+
+作り方としては、クラス内にprivateの変数として宣言し、この変数の参照・代入が必要なメソッドでは$this->変数名で参照します。
+
+<pre>
+    <code  class="prettyprint">
+/* 四角クラス */
+class Square {
+  /* 縦 */
+  private $height;
+  /* 横 */
+  private $width;
+  function __construct($height,$width) {
+    $this->height = $height;
+    $this->width = $width;
+  }
+
+  /* 面積計算 */
+  function calcArea() {
+    return $this->height * $this->width;
+  }
+}
+
+//呼び出し
+$sq = new Square(40,20);
+$area = $sq->calcArea();
+echo "area = $area ";// => 800
+
+$sq2 = new Square(4,3);
+$area = $sq2->calcArea();
+echo "area = $area ";// => 12
+
+$area = $sq->calcArea();
+echo "area = $area ";// => 800
+</code>
+</pre>
+ただこのインスタンス変数はstaticと付けたクラスメソッドからは呼べません。
+下記はエラーになります。静的な領域からインスタンス変数は呼べないのです。
+                </p>
+            </div>
+        </div>
+    </div>

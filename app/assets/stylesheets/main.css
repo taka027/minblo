@@ -1,0 +1,352 @@
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+    color: #555;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #1b98f8;
+}
+
+
+/*
+ * -- HELPER STYLES --
+ * Over-riding some of the .pure-button styles to make my buttons look unique
+ */
+.primary-button,
+.secondary-button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 23px;
+}
+.pure-button-primary {
+    border-radius: 5px;
+}
+
+.primary-button {
+    color: #fff;
+    background: #f3f3f3;
+    margin: 1em 0;
+    
+}
+.primary-button:hover,
+.primary-button:focus{
+    background: #f3f3f3;
+}
+    
+.secondary-button {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 0.5em 2em;
+    font-size: 80%;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ */
+pre {
+    padding: 1em 1em;
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+#layout, #nav, #list, #main {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* Make the navigation 100% width on phones */
+#nav {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background: rgb(44, 42, 58);
+    text-align: center;
+}
+/* Show the "Menu" button on phones */
+#nav .nav-menu-button {
+    display: block;
+    top: 0.8em;
+    right: 0em;
+    position: absolute;
+    background: rgb(44, 42, 58);
+    padding: 0 0;
+}
+
+/* When "Menu" is clicked, the navbar should be 80% height */
+#nav.active {
+    height: 80%;
+}
+/* Don't show the navigation items... */
+.nav-inner {
+    display: none;
+}
+
+/* ...until the "Menu" button is clicked */
+#nav.active .nav-inner {
+    display: block;
+    padding: 2em 0;
+}
+
+
+/*
+ * -- NAV BAR STYLES --
+ * Styling the default .pure-menu to look a little more unique.
+ */
+#nav .pure-menu {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 0 0.3em;
+    font-size: 0.8em;
+    
+}
+    #nav .pure-menu-link:hover,
+    #nav .pure-menu-link:focus {
+        background: rgb(55, 60, 90);
+    }
+    #nav .pure-menu-link {
+        color: #fff;
+        margin-left: 0.5em;
+        
+        width: 90%;
+        padding:6px;
+        word-wrap: break-word;
+        white-space: normal;
+  
+    }
+    #nav .pure-menu-heading {
+        border-bottom: none;
+        font-size:110%;
+        color: rgb(75, 113, 151);
+    }
+
+/* message */
+.field_with_errors {
+    margin: 0;
+    padding: 0;
+    color: #d9534f;
+}
+.notice, .alert {
+    z-index: 99;
+    opacity: 1;
+    margin: 15px 15px 5px 5px;
+    padding: 3px;
+    -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+    align-items: center; /* 縦方向中央揃え */
+    -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+    justify-content: center; /* 横方向中央揃え */
+
+    box-sizing: border-box;
+
+    width: 90%;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    border: 1px solid;
+
+    animation: fadeout 1s linear 3s 1;
+    animation-fill-mode: forwards;
+    -webkit-animation: fadeout 1s linear 3s 1;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes fadeout {
+    0%   {  opacity:0;height:60px;margin:0 auto;padding:15px;margin-bottom:20px;    }
+    66%  {  opacity:0;height:60px;margin:0 auto;padding:15px;margin-bottom:20px;    }
+    100% {  opacity:0;height:60px;margin:0 auto;padding:15px;margin-bottom:20px;  }
+}
+@-webkit-keyframes fadeout {
+    0%   {  opacity:0;height:60px;margin:0 auto;padding:15px;margin-bottom:20px;    }
+    66%  {  opacity:0;height:60px;margin:0 auto;padding:15px;margin-bottom:20px;    }
+    100% {  opacity:0;height:60px;margin:0 auto;padding:15px;margin-bottom:20px;   }
+}
+/*
+ * -- STYLES --
+ */
+.field{ 
+    padding: 2px 0; 
+    margin: 1px 0; 
+    line-height: 1.8em; 
+} 
+
+.font-small {
+    font-size:11px;
+}
+.page-count {
+    color: rgb(75, 113, 151);
+}
+
+.page-label-personal,
+.page-label-work,
+.page-label-travel {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 0.5em;
+    border-radius: 3px;
+}
+.page-label-personal {
+    background: #ffc94c;
+}
+.page-label-work {
+    background: #41ccb4;
+}
+.page-label-travel {
+    background: #40c365;
+}
+
+
+/* Item Styles */
+.page-item {
+    padding: 0.2em 0.5em;
+    border-bottom: 1px solid #ddd;
+    border-left: 6px solid transparent;
+}
+    .page-avatar {
+        border-radius: 3px;
+        margin-right: 0.5em;
+    }
+    .page-name,
+    .page-subject {
+        margin: 0;
+    }
+    .page-name {
+        text-transform: uppercase;
+        color: #999;
+    }
+    .page-desc {
+        font-size: 80%;
+        margin: 0.4em 0;
+    }
+
+.page-item-selected {
+    background: #fbbd7a;
+}
+.page-item-unread {
+    border-left: 6px solid #1b98f8;
+}
+
+/*  Content Styles */
+.page-content-header, .page-content-body, .page-content-footer {
+    padding: 1em 2em;
+}
+    .page-content-header {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .page-content-title {
+            margin: 0.5em 0 0;
+        }
+        .page-content-subtitle {
+            font-size: 1em;
+            margin: 0;
+            font-weight: normal;
+        }
+            .page-content-subtitle span {
+                color: #999;
+            }
+    .page-content-controls {
+        margin-top: 2em;
+        text-align: right;
+    }
+        .page-content-controls .secondary-button {
+            margin-bottom: 0.3em;
+        }
+
+    .page-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 40em) {
+
+    /* Move the layout over so we can fit the nav + list in on the left */
+    #layout {
+        padding-left:500px; /* "left col (nav + list)" width */
+        position: relative;
+    }
+
+    /* These are position:fixed; elements that will be in the left 500px of the screen */
+    #nav, #list {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+    }
+    #nav {
+        margin-left:-500px; /* "left col (nav + list)" width */
+        width:150px;
+        height: 100%;
+    }
+
+    /* Show the menu items on the larger screen */
+    .nav-inner {
+        display: block;
+        padding: 2em 0;
+    }
+
+    /* Hide the "Menu" button on larger screens */
+    #nav .nav-menu-button {
+        display: none;
+    }
+
+    #list {
+        margin-left: -350px;
+        width: 100%;
+        height: 33%;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #main {
+        position: fixed;
+        top: 33%;
+        right: 0;
+        bottom: 0;
+        left: 150px;
+        overflow: auto;
+        width: auto; /* so that it's not 100% */
+    }
+
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 60em) {
+
+    /* This will take up the entire height, and be a little thinner */
+    #list {
+        margin-left: -350px;
+        width:350px;
+        height: 100%;
+        border-right: 1px solid #ddd;
+    }
+
+    /* This will now take up it's own column, so don't need position: fixed; */
+    #main {
+        position: static;
+        margin: 0;
+        padding: 0;
+    }
+}
+
