@@ -16,6 +16,9 @@
                     
                     <% if user_signed_in? %>
                         <li class="pure-menu-item"><a 
+                            href="<%= blogs_path %>" class="pure-menu-link"><i class="fas fa-edit">
+                            </i>ブログ作成</a></li>
+                        <li class="pure-menu-item"><a 
                             href="<%= edit_user_registration_path %>" class="pure-menu-link"><i class="fas fa-user-edit">
                             </i>パスワード変更</a></li>
                         <li class="pure-menu-item">

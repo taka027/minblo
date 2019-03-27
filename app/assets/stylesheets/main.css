@@ -325,6 +325,11 @@ pre {
         width: auto; /* so that it's not 100% */
     }
 
+    #body {
+        margin-left: -350px;
+        width: auto;
+        height: 33%;
+    }
 }
 
 /*
@@ -347,6 +352,11 @@ pre {
         position: static;
         margin: 0;
         padding: 0;
+        width:100%;
+    }
+
+    #body {
+        
     }
 }
 

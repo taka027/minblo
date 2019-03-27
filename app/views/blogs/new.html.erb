@@ -1,5 +1,9 @@
-<h1>New Blog</h1>
+<%= render :partial => "common/nav" %>
 
-<%= render 'form', blog: @blog %>
-
-<%= link_to 'Back', blogs_path %>
+<div id="body" class="pure-u-1" style="padding: 0 0 0 1em;">
+    <h1>New Blog</h1>
+    
+    <%= render 'form', blog: @blog %>
+    
+    <%= link_to 'Back', blogs_path %>
+</div>

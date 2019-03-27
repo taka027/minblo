@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => "common/nav" %>
 
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
+<div id="body" class="pure-u-1" style="padding: 0 0 0 1em;">
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Blogs</h1>
+  
+  <table class="pure-table pure-table-bordered">
+    <thead>
       <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Update</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+    </thead>
+  
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= blog.title %></td>
+          <td><%= blog.updated_at %></td>
+          <td><%= link_to 'Show', blog, class: "pure-button pure-button-primary"  %></td>
+          <td><%= link_to 'Edit', edit_blog_path(blog), class: "pure-button pure-button-primary"  %></td>
+          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button pure-button-primary"  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  
+  <%= link_to 'New Blog', new_blog_path, class: "pure-button pure-button-primary"  %>
+</div>

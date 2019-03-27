@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => "common/nav" %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+<div id="body" class="pure-u-1" style="padding: 0 0 0 1em;">
+  
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>Title:</strong>
+    <%= @blog.title %>
+  </p>
+  
+  <p>
+    <strong>Body:</strong>
+    <%= sanitize @blog.body, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div pre span), attributes:  %w(id class href) %>
+  </p>
+  
+  <%= link_to 'Edit', edit_blog_path(@blog), class: "pure-button pure-button-primary"  %> 
+  <%= link_to 'Back', blogs_path, class: "pure-button pure-button-primary"  %>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+</div>
