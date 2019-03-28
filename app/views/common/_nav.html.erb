@@ -1,19 +1,26 @@
     <div id="nav" class="pure-u">
         <div class="nav-menu-button">
-            <a href="#" class="pure-menu-link font-small"><i class="fas fa-th fa-sm"></i>ブログ</a>
-            <a href="#" class="pure-menu-link font-small"><i class="fas fa-user fa-sm"></i>ログイン</a>
-                
+                <% if !@categories.nil? %>
+                    <% @categories.each do |category| %>
+                        
+                        <%= link_to content_tag(:i, category.name, class: 'fas fa-th'), category_path(category.id), class: "pure-menu-link font-small" %>
+                        
+                    <% end %>
+                <% end %>
         </div>
 
         <div class="nav-inner">
-            <button class="primary-button pure-button"><%= image_tag 'logo', :size => "80x80" %></button>
+            <button class="primary-button pure-button" onclick="location.href='/'"><%= image_tag 'logo', :size => "80x80" %></button>
 
             <div class="pure-menu">
                 <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a 
-                        href="/" class="pure-menu-link"><i class="fas fa-th">
-                        </i>ブログ</a></li>
-                    
+                    <% if !@categories.nil? %>
+                        <% @categories.each do |category| %>
+                            <li class="pure-menu-item">
+                            <%= link_to content_tag(:i, ' ' + category.name, class: 'fas fa-th'), category_path(category.id), class: "pure-menu-link" %>
+                            </li>
+                        <% end %>
+                    <% end %>
                     <% if user_signed_in? %>
                         <li class="pure-menu-item"><a 
                             href="<%= blogs_path %>" class="pure-menu-link"><i class="fas fa-edit">

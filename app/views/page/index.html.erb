@@ -6,7 +6,7 @@
         <div class="page-item pure-g">
             <div class="pure-u-1">
                 
-                <h4 class="page-subject"><%= link_to blog.title, page_path(blog) %></h4>
+                <h4 class="page-subject"><%= link_to blog.title, page_path(:category_id => blog.category_id, :id => blog.id) %></h4>
                 <p class="page-desc">
                     <%= blog.updated_at.strftime('%Y/%m/%d') %>
                 </p>
@@ -21,6 +21,7 @@
 
     <div id="main" class="pure-u-1">
         <div class="page-content">
+            <% if !@target_blog.nil? %>
             <div class="page-content-header pure-g">
                 <div class="pure-u-3-4">
                     <h1 class="page-content-title"><%= @target_blog.title %></h1>
@@ -31,10 +32,10 @@
 
                 <div class="page-content-controls pure-u-1-4">
                     <% if @target_blog.prev.present? %>
-                        <%= link_to '前へ',page_path(@target_blog.prev.id), class: "secondary-button pure-button" %>
+                        <%= link_to '前へ',page_path(:category_id => @target_blog.prev.category_id, :id => @target_blog.prev.id), class: "secondary-button pure-button" %>
                     <% end %>
                     <% if @target_blog.next.present? %>
-                        <%= link_to '次へ',page_path(@target_blog.next.id), class: "secondary-button pure-button" %>
+                        <%= link_to '次へ',page_path(:category_id => @target_blog.next.category_id, :id => @target_blog.next.id), class: "secondary-button pure-button" %>
                     <% end %>
                 </div>
             </div>
@@ -42,5 +43,6 @@
             <div class="page-content-body">
                 <%= @target_blog.body.html_safe %>
             </div>
+            <% end %>
         </div>
     </div>
