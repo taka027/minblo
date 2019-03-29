@@ -1,12 +1,22 @@
     <div id="nav" class="pure-u">
-        <div class="nav-menu-button">
+        <div class="nav-menu-button" id="mobile_menu">
+            <label class="toggle" for="open">
+                <i class="fas fa-bars fa-xs" aria-hidden="true"></i>
+            </label>
+            <input id="open" type="checkbox">
+            <div id="menu">
+              <nav>
+                <ul>
                 <% if !@categories.nil? %>
                     <% @categories.each do |category| %>
                         
-                        <%= link_to content_tag(:i, category.name, class: 'fas fa-th'), category_path(category.id), class: "pure-menu-link font-small" %>
+                        <li><%= link_to  category.name, category_path(category.id), class: "pure-menu-link font-small" %></li>
                         
                     <% end %>
                 <% end %>
+                </ul>
+              </nav>
+            </div>
         </div>
 
         <div class="nav-inner">
@@ -24,25 +34,25 @@
                     <% if user_signed_in? %>
                         <li class="pure-menu-item"><a 
                             href="<%= blogs_path %>" class="pure-menu-link"><i class="fas fa-edit">
-                            </i>ブログ作成</a></li>
+                            </i> ブログ作成</a></li>
                         <li class="pure-menu-item"><a 
                             href="<%= edit_user_registration_path %>" class="pure-menu-link"><i class="fas fa-user-edit">
-                            </i>パスワード変更</a></li>
+                            </i> パスワード変更</a></li>
                         <li class="pure-menu-item">
-                            <%= link_to content_tag(:i, 'ログアウト', class: 'fas fa-sign-out-alt'), destroy_user_session_path, method: :delete, class: "pure-menu-link" %>
+                            <%= link_to content_tag(:i, ' ログアウト', class: 'fas fa-sign-out-alt'), destroy_user_session_path, method: :delete, class: "pure-menu-link" %>
                             </li>
                     <% else %>
                         <li class="pure-menu-item"><a 
                             href="<%= new_user_session_path %>" class="pure-menu-link"><i class="fas fa-user">
-                            </i>ログイン</a></li>
+                            </i> ログイン</a></li>
                         <li class="pure-menu-item"><a 
                             href="<%= new_user_registration_path %>" class="pure-menu-link"><i class="fas fa-user-plus">
-                            </i>ユーザ登録</a></li>
+                            </i> ユーザ登録</a></li>
                     <% end %>
-                    <li class="pure-menu-heading">ニュース</li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link font-small" target="_blank">日銀、長短金利操作の影響は限定－マネーと物価の分析必要</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link font-small" target="_blank">トランプ大統領、ＳＮＳの「偏向」に対処必要と主張        </a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link font-small" target="_blank">米国株が５カ月ぶり高値、注目材料控え</a></li>
+                    <!--
+                    <li class="pure-menu-heading"></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link font-small" target="_blank"></a></li>
+                    -->
                 </ul>
             </div>
             <div class="pure-u">
