@@ -47,8 +47,4 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: minblo_production
-  username: minblo
-  password: <%= ENV['MINBLO_DATABASE_PASSWORD'] %>
+production: <%= ENV['CLEARDB_DATABASE_URL'] %>
