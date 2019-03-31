@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
-    @blog = Blog.new
+    @blog = current_user.blogs.build
   end
 
   # GET /blogs/1/edit
@@ -24,7 +24,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @blog = current_user.blogs.build(blog_params)
 
     respond_to do |format|
       if @blog.save
@@ -64,7 +64,14 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      if current_user.nil?
+        @blog = Blog.find(params[:id]) 
+      else
+        @blog = current_user.blogs.find_by(id: params[:id]) 
+      end
+      if @blog.nil?
+        redirect_to blogs_url
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
