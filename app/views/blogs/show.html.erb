@@ -10,6 +10,9 @@
   <p>
     Category:<%= @blog.category.name %>
   </p>
+  <p>
+    User:<%= @blog.user.name %>
+  </p>
   
   <p>
     <%= sanitize @blog.body, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div pre span), attributes:  %w(id class href) %>
