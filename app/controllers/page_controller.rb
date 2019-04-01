@@ -1,8 +1,9 @@
 class PageController < ApplicationController
   def index
     @categories = Category.all
-    @target_blog = Blog.where(category_id: 1).order('created_at ASC').first
-    @blogs = Blog.where(category_id: 1).order('created_at ASC')
+    @target_blog = Blog.order('category_id ASC').order('created_at ASC').first
+    #@target_blog = Blog.where(category_id: 1).order('created_at ASC').first
+    @blogs = Blog.where(category_id: @target_blog.category_id).order('created_at ASC')
   end
   
   def category
