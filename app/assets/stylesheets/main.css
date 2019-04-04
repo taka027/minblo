@@ -297,6 +297,9 @@ pre {
     .page-content-header {
         border-bottom: 1px solid #ddd;
     }
+    .page-content-footer {
+        border-top: 1px solid #ddd;
+    }
 
         .page-content-title {
             margin: 0.5em 0 0;

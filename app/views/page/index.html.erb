@@ -43,6 +43,17 @@
             <div class="page-content-body">
                 <%= @target_blog.body.html_safe %>
             </div>
+            
+            <div class="page-content-footer pure-g">
+                <div class="page-content-controls pure-u-1-4">
+                    <% if @target_blog.prev.present? %>
+                        <%= link_to '前へ',page_path(:category_id => @target_blog.prev.category_id, :id => @target_blog.prev.id), class: "secondary-button pure-button" %>
+                    <% end %>
+                    <% if @target_blog.next.present? %>
+                        <%= link_to '次へ',page_path(:category_id => @target_blog.next.category_id, :id => @target_blog.next.id), class: "secondary-button pure-button" %>
+                    <% end %>
+                </div>
+            </div>
             <% end %>
         </div>
     </div>
