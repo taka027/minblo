@@ -292,6 +292,7 @@ pre {
 /*  Content Styles */
 .page-content-header, .page-content-body, .page-content-footer {
     padding: 1em 2em;
+    -webkit-font-smoothing: antialiased;
 }
     .page-content-header {
         border-bottom: 1px solid #ddd;
