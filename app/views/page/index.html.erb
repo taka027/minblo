@@ -5,7 +5,7 @@
         <% @blogs.each do |blog| %>
         <div class="page-item pure-g">
             <div class="pure-u-1">
-                <h4 class="page-subject"><%= link_to blog.title, page_path(:category_id => blog.category_id, :id => blog.id) %></h4>
+                <h4 class="page-subject"><%= link_to blog.title, page_path(:category_id => blog.category_id, :id => blog.id), :target => "_self" %></h4>
                 <h5 class="page-name"><%= blog.user.name %></h5>
                 <p class="page-desc">
                     <%= blog.updated_at.strftime('%Y/%m/%d') %>
@@ -32,10 +32,10 @@
 
                 <div class="page-content-controls pure-u-1-4">
                     <% if @target_blog.prev.present? %>
-                        <%= link_to '前へ',page_path(:category_id => @target_blog.prev.category_id, :id => @target_blog.prev.id), class: "secondary-button pure-button" %>
+                        <%= link_to '前へ',page_path(:category_id => @target_blog.prev.category_id, :id => @target_blog.prev.id), class: "secondary-button pure-button", :target => "_self" %>
                     <% end %>
                     <% if @target_blog.next.present? %>
-                        <%= link_to '次へ',page_path(:category_id => @target_blog.next.category_id, :id => @target_blog.next.id), class: "secondary-button pure-button" %>
+                        <%= link_to '次へ',page_path(:category_id => @target_blog.next.category_id, :id => @target_blog.next.id), class: "secondary-button pure-button", :target => "_self" %>
                     <% end %>
                 </div>
             </div>
@@ -47,10 +47,10 @@
             <div class="page-content-footer pure-g">
                 <div class="page-content-controls pure-u-1-4">
                     <% if @target_blog.prev.present? %>
-                        <%= link_to '前へ',page_path(:category_id => @target_blog.prev.category_id, :id => @target_blog.prev.id), class: "secondary-button pure-button" %>
+                        <%= link_to '前へ',page_path(:category_id => @target_blog.prev.category_id, :id => @target_blog.prev.id), class: "secondary-button pure-button", :target => "_self" %>
                     <% end %>
                     <% if @target_blog.next.present? %>
-                        <%= link_to '次へ',page_path(:category_id => @target_blog.next.category_id, :id => @target_blog.next.id), class: "secondary-button pure-button" %>
+                        <%= link_to '次へ',page_path(:category_id => @target_blog.next.category_id, :id => @target_blog.next.id), class: "secondary-button pure-button", :target => "_self" %>
                     <% end %>
                 </div>
             </div>

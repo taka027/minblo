@@ -18,7 +18,7 @@
     <%= sanitize @blog.body, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div pre span), attributes:  %w(id class href) %>
   </p>
   
-  <%= link_to 'Edit', edit_blog_path(@blog), class: "pure-button pure-button-primary"  %> 
-  <%= link_to 'Back', blogs_path, class: "pure-button pure-button-primary"  %>
+  <%= link_to 'Edit', edit_blog_path(@blog), class: "pure-button pure-button-primary", :target => "_self"  %> 
+  <%= link_to 'Back', blogs_path, class: "pure-button pure-button-primary", :target => "_self"  %>
 
 </div>

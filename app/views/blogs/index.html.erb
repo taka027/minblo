@@ -23,9 +23,9 @@
           <td><%= blog.category.name %></td>
           <td><%= blog.user.name %></td>
           <td><%= blog.updated_at %></td>
-          <td><%= link_to 'Show', blog, class: "pure-button pure-button-primary"  %></td>
-          <td><%= link_to 'Edit', edit_blog_path(blog), class: "pure-button pure-button-primary"  %></td>
-          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button pure-button-primary"  %></td>
+          <td><%= link_to 'Show', blog, class: "pure-button pure-button-primary", :target => "_self"  %></td>
+          <td><%= link_to 'Edit', edit_blog_path(blog), class: "pure-button pure-button-primary", :target => "_self"  %></td>
+          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button pure-button-primary", :target => "_self"  %></td>
         </tr>
       <% end %>
     </tbody>
@@ -33,5 +33,5 @@
   
   <br>
   
-  <%= link_to 'New Blog', new_blog_path, class: "pure-button pure-button-primary"  %>
+  <%= link_to 'New Blog', new_blog_path, class: "pure-button pure-button-primary", :target => "_self"  %>
 </div>

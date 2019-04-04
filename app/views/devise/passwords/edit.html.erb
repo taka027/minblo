@@ -3,7 +3,7 @@
 <div id="list" class="pure-u-1" style="padding: 0 0 0 1em;">
   <h2>Change your password</h2>
 
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "pure-form"}) do |f| %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "pure-form", target: "_self"}) do |f| %>
     
     <%= f.hidden_field :reset_password_token %>
   

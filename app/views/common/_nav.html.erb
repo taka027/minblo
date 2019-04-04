@@ -10,7 +10,7 @@
                 <% if !@categories.nil? %>
                     <% @categories.each do |category| %>
                         
-                        <li><%= link_to  category.name, category_path(category.id), class: "pure-menu-link font-small" %></li>
+                        <li><%= link_to  category.name, category_path(category.id), class: "pure-menu-link font-small", :target => "_self" %></li>
                         
                     <% end %>
                 <% end %>
@@ -27,26 +27,26 @@
                     <% if !@categories.nil? %>
                         <% @categories.each do |category| %>
                             <li class="pure-menu-item">
-                            <%= link_to content_tag(:i, ' ' + category.name, class: 'fas fa-th'), category_path(category.id), class: "pure-menu-link" %>
+                            <%= link_to content_tag(:i, ' ' + category.name, class: 'fas fa-th'), category_path(category.id), class: "pure-menu-link", :target => "_self" %>
                             </li>
                         <% end %>
                     <% end %>
                     <% if user_signed_in? %>
                         <li class="pure-menu-item"><a 
-                            href="<%= blogs_path %>" class="pure-menu-link"><i class="fas fa-edit">
+                            href="<%= blogs_path %>" class="pure-menu-link" target="_self"><i class="fas fa-edit">
                             </i> ブログ作成</a></li>
                         <li class="pure-menu-item"><a 
-                            href="<%= edit_user_registration_path %>" class="pure-menu-link"><i class="fas fa-user-edit">
+                            href="<%= edit_user_registration_path %>" class="pure-menu-link" target="_self"><i class="fas fa-user-edit">
                             </i> パスワード変更</a></li>
                         <li class="pure-menu-item">
-                            <%= link_to content_tag(:i, ' ログアウト', class: 'fas fa-sign-out-alt'), destroy_user_session_path, method: :delete, class: "pure-menu-link" %>
+                            <%= link_to content_tag(:i, ' ログアウト', class: 'fas fa-sign-out-alt'), destroy_user_session_path, method: :delete, class: "pure-menu-link", :target => "_self" %>
                             </li>
                     <% else %>
                         <li class="pure-menu-item"><a 
-                            href="<%= new_user_session_path %>" class="pure-menu-link"><i class="fas fa-user">
+                            href="<%= new_user_session_path %>" class="pure-menu-link" target="_self"><i class="fas fa-user">
                             </i> ログイン</a></li>
                         <li class="pure-menu-item"><a 
-                            href="<%= new_user_registration_path %>" class="pure-menu-link"><i class="fas fa-user-plus">
+                            href="<%= new_user_registration_path %>" class="pure-menu-link" target="_self"><i class="fas fa-user-plus">
                             </i> ユーザ登録</a></li>
                     <% end %>
                     <!--
