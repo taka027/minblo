@@ -3,13 +3,15 @@
  * Most of these are inherited from Base, but I want to change a few.
  */
 body {
-    color: #555;
+    color: #111;
+    line-height: 1.8em;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Arial, "メイリオ", Meiryo, sans-serif;
 }
 
 
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #3A2A2C;/*rgb(44, 42, 58);*/
 }
 
@@ -59,10 +61,11 @@ pre {
     word-wrap: break-word;
     overflow: auto;
     tab-size: 2;
-    font-size: 0.9em;
-    line-height: 1.9em;
-    letter-spacing: 0.1em;
-    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    font-family: "note monospace", "SFMono-Regular", Consolas, Menlo, Courier, monospace;
+    font-size: 12px;
+    line-height: 18px;
+    
 }
 #layout, #nav, #list, #main {
     margin: 0;
@@ -292,6 +295,7 @@ pre {
 /*  Content Styles */
 .page-content-header, .page-content-body, .page-content-footer {
     padding: 1em 2em;
+    letter-spacing: 0.1em;
     -webkit-font-smoothing: antialiased;
 }
     .page-content-header {
@@ -310,7 +314,7 @@ pre {
             font-weight: normal;
         }
             .page-content-subtitle span {
-                color: #999;
+                color: #555;
             }
     .page-content-controls {
         margin-top: 2em;
