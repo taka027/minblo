@@ -131,13 +131,25 @@ pre {
         padding:6px;
         word-wrap: break-word;
         white-space: normal;
-  
+        display: inline;
     }
     #nav .pure-menu-heading {
         border-bottom: none;
         font-size:110%;
         color: rgb(75, 113, 151);
     }
+#nav .circle{
+    display: inline-block;
+    padding: 0 1px 0 0;
+    font-size: 11px;
+    width: 1.5em;
+    height: 15px;
+    border-radius: 20%;
+    background: skyblue;
+    text-align:center;
+    line-height: 15px;
+    vertical-align: middle;
+}
 /* mobile menu */
 #mobile_menu ul {
   margin: 0;

@@ -28,6 +28,7 @@
                         <% @categories.each do |category| %>
                             <li class="pure-menu-item">
                             <%= link_to content_tag(:i, ' ' + category.name, class: 'fas fa-th'), category_path(category.id), class: "pure-menu-link", :target => "_self" %>
+                            <span class="circle"><%= category.countBlog %></span>
                             </li>
                         <% end %>
                     <% end %>
