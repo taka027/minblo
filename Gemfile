@@ -68,3 +68,4 @@ gem "dotenv-rails"
 #gem "sassc-rails"
 gem "kaminari"
 gem "trix"
+gem 'devise-i18n'
